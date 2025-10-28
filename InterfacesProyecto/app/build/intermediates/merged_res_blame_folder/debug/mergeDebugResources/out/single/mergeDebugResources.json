@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/drawable_ic_launcher_background.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/layout_activity_registro.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/layout/activity_registro.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/layout_activity_main.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/layout_activity_login.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/layout/activity_login.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/drawable_fondo_degradado.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/drawable/fondo_degradado.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/drawable_iconoflechaback.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/drawable/iconoflechaback.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/xml_backup_rules.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/xml_data_extraction_rules.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/drawable_logopawdate.xml.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/drawable/logopawdate.xml"
+    },
+    {
+        "merged": "org.cibertec.edu.interfacesproyecto.app-debug-35:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "org.cibertec.edu.interfacesproyecto.app-main-37:/mipmap-hdpi/ic_launcher_round.webp"
+    }
+]
