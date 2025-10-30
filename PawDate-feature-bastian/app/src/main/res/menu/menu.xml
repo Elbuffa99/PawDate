@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- Sección principal del menú -->
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_inicio"
+            android:title="Inicio"/>
+
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_perfil"
+            android:title="Mi perfil"/>
+
+
+        <item
+            android:id="@+id/nav_match"
+            android:icon="@drawable/ic_corazon"
+            android:title="Mis match"/>
+
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/ic_privacy"
+            android:title="Políticas de Privacidad"/>
+
+
+    </group>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Cerrar Sesión"/>
+
+</menu>

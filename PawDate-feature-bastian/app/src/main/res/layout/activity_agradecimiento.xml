@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    tools:context=".view.registro.AgradecimientoActivity">
+
+    <!-- Texto de la aplicación en un linearlayout -->
+    <LinearLayout
+        android:id="@+id/LLyt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/TvCuenta"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="¡Gracias por crear tu cuenta!"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="27sp"
+            android:fontFamily="@font/kanit_medium"/>
+    </LinearLayout>
+
+    <!-- Logo de la aplicación -->
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@drawable/pawdate_icon"
+        app:tint="@android:color/white"
+        android:layout_margin="80dp"
+        app:layout_constraintTop_toBottomOf="@+id/LLyt1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- Texto de la aplicación en un linearlayout -->
+    <LinearLayout
+        android:id="@+id/LLyt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/Logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/TvBuscando"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Estamos buscando posibles compañeros perrunos.."
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:fontFamily="@font/kanit_medium"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

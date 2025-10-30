@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Fuego -->
+    <path
+        android:fillColor="#FF7A00"
+        android:pathData="M256,40c20,40,60,60,60,120s-40,100,-60,140c-20,-40,-60,-80,-60,-140s40,-80,60,-120z" />
+
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M256,60c10,25,35,45,35,90s-25,75,-35,105c-10,-30,-35,-60,-35,-105s25,-65,35,-90z" />
+
+    <!-- Corazón -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M256,480c-100,-80 -200,-160 -200,-260a120,120 0,0,1,240,0a120,120 0,0,1,240,0c0,100 -100,180 -200,260z" />
+
+    <!-- Brillo del corazón -->
+    <path
+        android:fillColor="#FF5C8D"
+        android:fillAlpha="0.7"
+        android:pathData="M180,260a60,60 0,0,1,120,0a60,60 0,0,1,-120,0z" />
+
+</vector>

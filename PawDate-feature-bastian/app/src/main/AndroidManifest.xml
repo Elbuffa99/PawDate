@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.InterfacesProyecto">
+        <activity
+            android:name=".view.registro.AgradecimientoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.AvatarsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.PersonalidadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.HabitosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.menu.MatchEncuentroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.perfil.EditPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.perfil.PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.menu.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.menu.InicioPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.InicioSActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.menu.RelacionesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.GeneroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.NacimientoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.NombreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.BienvenidaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.registro.RegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

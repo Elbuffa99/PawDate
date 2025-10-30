@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.registro.AvatarsActivity">
+
+    <!-- Flecha de atras -->
+    <ImageView
+        android:id="@+id/Flecha"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/iconoflechaback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#F69824" />
+
+    <!--  Barra de progreso  -->
+    <ProgressBar
+        android:id="@+id/BProgreso"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:progress="98"
+        android:max="100"
+        android:layout_marginTop="10dp"
+        android:progressDrawable="@drawable/barra_progreso"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_constraintTop_toBottomOf="@+id/Flecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/TvH1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Avatar"
+        android:fontFamily="@font/kanit_bold"
+        android:textSize="25sp"
+        android:layout_margin="12dp"
+        android:textColor="#232323"
+        app:layout_constraintTop_toBottomOf="@+id/BProgreso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+<!-- Label -->
+    <TextView
+        android:id="@+id/TvLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escoge una foto donde tu amigo de cuatro patas destaque."
+        android:textSize="12sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:textColor="#232323"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintTop_toBottomOf="@+id/TvH1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+<!--  Imagen que al tocar debería abrir un explorador de archivos juas juas  -->
+    <ImageView
+        android:id="@+id/ImgPerfil"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/perro"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--  Boton siguiente  -->
+    <Button
+        android:id="@+id/BSiguiente"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        style="@style/ButtonGradient"
+        android:textColor="#ffffff"
+        android:text="SIGUIENTE"
+        android:textSize="20sp"
+        android:fontFamily="@font/kanit_bold"
+        app:layout_constraintTop_toBottomOf="@+id/ImgPerfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:src="@drawable/ic_sandwich"
+            android:contentDescription="Volver"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:text="Políticas de Privacidad"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Contenido desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_degradado"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvPrivacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="6dp"
+            android:text="                             Bienvenido a PawDate
+\n\nTu privacidad es importante para nosotros.
+ \nEsta política explica cómo recopilamos, usamos y protegemos los datos de los usuarios y sus mascotas.\n\n1. Recopilamos información básica del perfil, fotos y hábitos de tu mascota solo para fines de coincidencia dentro de la app.\n2. No compartimos información personal con terceros sin tu consentimiento.\n3. Puedes eliminar tu cuenta y todos tus datos en cualquier momento desde la configuración.\n4. Las ubicaciones se usan únicamente para mostrar coincidencias cercanas.\n5. Mantenemos la seguridad de tus datos mediante cifrado y autenticación segura.\n\n
+            Al usar PawDate, aceptas estas políticas.\n
+                Gracias por confiar en nosotros 🐾
+"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </ScrollView>
+
+</LinearLayout>
