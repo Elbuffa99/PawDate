@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.InterfacesProyecto" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="subtitulo">
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.InterfacesProyecto" parent="Base.Theme.InterfacesProyecto" />
+<!--  ESTILO PARA EL BOTON DEGRADADO  -->
+    <style name="ButtonGradient" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/boton_degradado</item>
+        <item name="backgroundTint">@null</item>
+        <item name="backgroundTintMode">@null</item>
+    </style>
+</resources>

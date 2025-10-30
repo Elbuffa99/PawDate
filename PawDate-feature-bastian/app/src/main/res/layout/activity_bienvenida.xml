@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.registro.BienvenidaActivity">
+
+    <!-- Flecha de atras -->
+    <ImageView
+        android:id="@+id/Flecha"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/iconoflechaback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#F69824" />
+
+    <!-- Logo momentaneo de la aplicación -->
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pawdate"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/Flecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- Titulo principal de bienvenida -->
+    <TextView
+        android:id="@+id/TvH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido a PawDate"
+        android:textColor="#F69824"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:fontFamily="@font/kanit_bold"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/Logo"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+<!-- Un tipo de label para las descripciones -->
+    <TextView
+        android:id="@+id/TvLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Por favor sigue las siguientes reglas"
+        android:textAlignment="center"
+        android:textColor="#F69824"
+        android:textSize="15sp"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvH1" />
+
+<!-- H2 de bienvenida -->
+    <TextView
+        android:id="@+id/TvH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Que tu cachorro sea él mismo 🐶"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="15sp"
+        android:fontFamily="@font/kanit_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel1" />
+
+    <!-- Un tipo de label para las descripciones -->
+    <TextView
+        android:id="@+id/TvLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Asegurate que el avatar, edad y biografia concuerden con tu pequeño de cuatro patas"
+        android:textAlignment="center"
+        android:textColor="#404040"
+        android:textSize="10sp"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvH2" />
+
+    <!-- H3 de bienvenida -->
+    <TextView
+        android:id="@+id/TvH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Mantenlo seguro 🔒"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="15sp"
+        android:fontFamily="@font/kanit_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel2" />
+
+    <!-- Un tipo de label para las descripciones -->
+    <TextView
+        android:id="@+id/TvLabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="No te apresures al dar información personal de tu engreido"
+        android:textAlignment="center"
+        android:textColor="#404040"
+        android:textSize="10sp"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvH3" />
+
+    <!-- H4 de bienvenida -->
+    <TextView
+        android:id="@+id/TvH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Jueguen limpio 🥎"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="15sp"
+        android:fontFamily="@font/kanit_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel3" />
+
+    <!-- Un tipo de label para las descripciones -->
+    <TextView
+        android:id="@+id/TvLabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="No te apresures al dar información personal de tu engreido"
+        android:textAlignment="center"
+        android:textColor="#404040"
+        android:textSize="10sp"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvH4" />
+
+    <!-- H5 de bienvenida -->
+    <TextView
+        android:id="@+id/TvH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Sé proactivo 🗣️"
+        android:textAlignment="center"
+        android:textColor="#404040"
+        android:textSize="15sp"
+        android:fontFamily="@font/kanit_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel4" />
+
+    <!-- Un tipo de label para las descripciones -->
+    <TextView
+        android:id="@+id/TvLabel5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Siempre reporta las travesuras de otros perritos"
+        android:textAlignment="center"
+        android:textColor="#232323"
+        android:textSize="10sp"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvH5" />
+
+    <!--  Boton de acuerdo  -->
+    <Button
+        android:id="@+id/BAcuerdo"
+        style="@style/ButtonGradient"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:fontFamily="@font/kanit_bold"
+        android:text="DE ACUERDO"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvH5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
