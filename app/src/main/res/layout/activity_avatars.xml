@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.registro.GeneroActivity">
+    tools:context=".view.registro.AvatarsActivity">
 
     <!-- Flecha de atras -->
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:indeterminate="false"
-        android:progress="45"
+        android:progress="98"
         android:max="100"
         android:layout_marginTop="10dp"
         android:progressDrawable="@drawable/barra_progreso"
@@ -36,75 +36,60 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
-    <!-- Titulo principal de genero -->
+    <!-- Título -->
     <TextView
         android:id="@+id/TvH1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿Cuál es el género de tu perrito?"
-        android:textColor="#232323"
-        android:textAlignment="center"
-        android:textSize="22sp"
+        android:text="Avatar"
         android:fontFamily="@font/kanit_bold"
-        android:layout_margin="20dp"
+        android:textSize="25sp"
+        android:layout_margin="12dp"
+        android:textColor="#232323"
         app:layout_constraintTop_toBottomOf="@+id/BProgreso"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
-    <!--label fecha -->
+<!-- Label -->
     <TextView
         android:id="@+id/TvLabel1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
-        android:text="Selecciona el género de tu perrito"
-        android:textAlignment="center"
-        android:textColor="#232323"
+        android:text="Escoge una foto donde tu amigo de cuatro patas destaque."
         android:textSize="12sp"
-        android:fontFamily="@font/kanit_semibold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TvH1" />
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:textColor="#232323"
+        android:fontFamily="@font/kanit_medium"
+        app:layout_constraintTop_toBottomOf="@+id/TvH1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <!--  Boton macho  -->
-    <Button
-        android:id="@+id/BMacho"
+<!--  Imagen que al tocar debería abrir un explorador de archivos juas juas  -->
+    <ImageView
+        android:id="@+id/ImgPerfil"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_height="450dp"
         android:layout_marginTop="20dp"
-        style="@style/ButtonGradient"
-        android:textColor="#ffffff"
-        android:text="Macho"
-        android:fontFamily="@font/kanit_semibold"
+        android:src="@drawable/perro"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintTop_toBottomOf="@+id/TvLabel1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!--  Boton hembra  -->
-    <Button
-        android:id="@+id/BHembra"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        style="@style/ButtonGradient"
-        android:textColor="#ffffff"
-        android:text="Hembra"
-        android:fontFamily="@font/kanit_semibold"
-        app:layout_constraintTop_toBottomOf="@+id/BMacho"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!--  Boton siguiente  -->
     <Button
         android:id="@+id/BSiguiente"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="485dp"
+        android:layout_marginTop="23dp"
         style="@style/ButtonGradient"
         android:textColor="#ffffff"
         android:text="SIGUIENTE"
         android:textSize="20sp"
         android:fontFamily="@font/kanit_bold"
-        app:layout_constraintTop_toBottomOf="@+id/TvLabel1"
+        app:layout_constraintTop_toBottomOf="@+id/ImgPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

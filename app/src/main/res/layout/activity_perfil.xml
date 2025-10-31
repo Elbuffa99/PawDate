@@ -53,7 +53,7 @@
                 android:id="@+id/ivFotoPerfil"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/dogu"
+                android:src="@drawable/amorperruno_icon"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="12dp"
                 android:contentDescription="Foto del perrito" />

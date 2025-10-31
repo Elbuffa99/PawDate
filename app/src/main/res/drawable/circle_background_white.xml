@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- Fondo blanco -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Borde exterior gris suave -->
+    <stroke
+        android:width="2dp"
+        android:color="#E0E0E0" />
+
+    <!-- Sombra ligera -->
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp" />
+
+    <!-- Tamaño adaptable -->
+    <size
+        android:width="150dp"
+        android:height="150dp" />
+</shape>

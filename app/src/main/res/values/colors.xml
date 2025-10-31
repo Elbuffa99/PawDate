@@ -39,4 +39,9 @@
     <color name="turquesa">#589FFF</color>
     <color name="verde1">#83D689</color>
     <color name="verde2">#B5F4B8</color>
+
+        <color name="teal_700">#018786</color>
+        <color name="red">#FF0000</color>
+
+
 </resources>

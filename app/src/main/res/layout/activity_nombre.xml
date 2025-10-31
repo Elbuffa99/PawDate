@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#404040" />
+        app:tint="#F69824" />
 
 <!--  Barra de progreso  -->
     <ProgressBar
@@ -26,7 +26,7 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:indeterminate="false"
-        android:progress="20"
+        android:progress="15"
         android:max="100"
         android:layout_marginTop="10dp"
         android:progressDrawable="@drawable/barra_progreso"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿Cuál es el nombre del perrito?"
-        android:textColor="#404040"
+        android:textColor="#232323"
         android:textAlignment="center"
         android:textSize="22sp"
         android:fontFamily="@font/kanit_bold"
@@ -54,9 +54,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Til1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        app:boxStrokeColor="#DEDEDE"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxStrokeColor="#232323"
         app:boxCornerRadiusBottomEnd="15dp"
         app:boxCornerRadiusBottomStart="15dp"
         app:boxCornerRadiusTopEnd="15dp"
@@ -65,16 +67,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- input nombre -->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/NomPerro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"/>
+            android:inputType="textCapWords"
+            android:hint="Nombre del perrito"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            android:padding="12dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/kanit_medium" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
 
     <!--label perfil -->
@@ -86,7 +92,7 @@
         android:layout_marginTop="15dp"
         android:text="Así es como aparecerá en tu perfil."
         android:textAlignment="center"
-        android:textColor="#404040"
+        android:textColor="#232323"
         android:textSize="10sp"
         android:fontFamily="@font/kanit_semibold"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +106,7 @@
         android:layout_marginStart="24dp"
         android:text="No puedes cambiarlo después."
         android:textAlignment="center"
-        android:textColor="#404040"
+        android:textColor="#232323"
         android:textSize="10sp"
         android:fontFamily="@font/kanit_semibold"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,10 +117,11 @@
         android:id="@+id/BSiguiente"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="425dp"
-        android:backgroundTint="#F37F45"
+        android:layout_marginTop="418dp"
+        style="@style/ButtonGradient"
         android:textColor="#ffffff"
         android:text="SIGUIENTE"
+        android:textSize="20sp"
         android:fontFamily="@font/kanit_bold"
         app:layout_constraintTop_toBottomOf="@+id/TvLabel2"
         app:layout_constraintEnd_toEndOf="parent"

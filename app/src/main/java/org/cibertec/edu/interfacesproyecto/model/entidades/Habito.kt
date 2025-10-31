@@ -8,9 +8,9 @@ import androidx.room.PrimaryKey
     tableName = "HABITOS",
     foreignKeys = [
         ForeignKey(
-            entity = Perro::class,
-            parentColumns = ["id_perro"],
-            childColumns = ["id_perro"],
+            entity = Perfil::class,
+            parentColumns = ["id_perfil"],
+            childColumns = ["id_perfil"],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
         )
@@ -19,7 +19,7 @@ import androidx.room.PrimaryKey
 data class Habito(
     @PrimaryKey(autoGenerate = true)
     val id_habito: Int = 0,
-    val id_perro: Int,
+    val id_perfil: Int, // 🔗 Relación con Perfil
     val nivel_energia: String,
     val frecuencia_paseos: String,
     val sociabilidad: String,

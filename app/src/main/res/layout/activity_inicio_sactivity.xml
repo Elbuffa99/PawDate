@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_degradado"
-    tools:context=".view.InicioSActivity">
+    tools:context=".view.login.InicioSActivity">
 <!-- Copypaste de lo que hicimos en clase -->
     <!-- Logo momentaneo de la aplicación -->
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logopawdate"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@drawable/pawdate_icon"
         app:tint="@android:color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/Titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inicio de Sesión"
+        android:text="Inicio de Sesión en PawDate"
         android:textAlignment="center"
         android:textSize="25sp"
         android:textColor="#ffffff"
@@ -39,7 +39,7 @@
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:boxStrokeWidth="2dp"
+        app:boxBackgroundMode="filled"
         app:boxCornerRadiusBottomEnd="25dp"
         app:boxCornerRadiusBottomStart="25dp"
         app:boxCornerRadiusTopEnd="25dp"
@@ -54,10 +54,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Correo Electrónico"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
             android:fontFamily="@font/kanit_medium"
             android:layout_margin="24dp"/>
-
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -66,6 +67,7 @@
         android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:boxBackgroundMode="filled"
         app:boxStrokeWidth="2dp"
         app:boxCornerRadiusBottomEnd="25dp"
         app:boxCornerRadiusBottomStart="25dp"
@@ -82,6 +84,8 @@
             android:layout_height="wrap_content"
             android:hint="Contraseña"
             android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
             android:fontFamily="@font/kanit_medium"
             android:layout_margin="24dp"/>
 
@@ -93,8 +97,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:backgroundTint="#ffffff"
-        android:textColor="#404040"
-        android:text="INGRESAR"
+        android:textColor="#232323"
+        android:text="Ingresar"
+        android:textSize="20sp"
         android:fontFamily="@font/kanit_bold"
         app:layout_constraintTop_toBottomOf="@+id/text2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,5 +135,4 @@
             android:textColor="#ffffff"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

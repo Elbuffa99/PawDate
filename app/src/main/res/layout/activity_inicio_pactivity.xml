@@ -43,7 +43,7 @@
             android:id="@+id/iconRight"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/dogh"
+            android:src="@drawable/ic_checked"
             android:contentDescription="Profile"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +71,7 @@
             android:layout_height="match_parent"
             android:contentDescription="Puppy winking"
             android:scaleType="centerCrop"
-            android:src="@drawable/dogp" />
+            android:src="@drawable/boton_degradado" />
     </androidx.cardview.widget.CardView>
 
     <!-- Botones flotantes -->
