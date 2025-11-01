@@ -74,10 +74,11 @@ class PawDateDBHelper(context: Context) :
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL("DROP TABLE IF EXISTS MATCHES")
-        db.execSQL("DROP TABLE IF EXISTS PERSONALIDADES")
-        db.execSQL("DROP TABLE IF EXISTS HABITOS")
-        db.execSQL("DROP TABLE IF EXISTS PERFILES")
-        onCreate(db)
+        if (oldVersion < 2) {
+            // Ejemplo: Si agregas una nueva columna, solo la creas aquí
+            db.execSQL("ALTER TABLE PERFILES ADD COLUMN nueva_columna TEXT DEFAULT ''")
+        }
+        // No borres nada aquí a menos que sea estrictamente necesario
     }
+
 }

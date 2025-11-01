@@ -3,6 +3,7 @@ package org.cibertec.edu.interfacesproyecto.view.registro
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -79,6 +80,18 @@ class PersonalidadActivity : AppCompatActivity() {
         chipsInteraccion.forEach { chip ->
             chip.setOnClickListener { manejarSeleccion(chip, chipsInteraccion, "interaccion") }
         }
+
+        val flechaBack = findViewById<ImageView>(R.id.Flecha)  // Aquí capturamos la flecha
+
+        flechaBack.setOnClickListener {
+            // Redirige a LoginActivity cuando se hace clic en la flecha
+            val intent = Intent(this, HabitosActivity::class.java)
+            startActivity(intent)
+            finish()  // Opcional, para asegurarte de que se cierre esta actividad
+
+        }
+
+
 
         // === 3️⃣ Botón siguiente guarda y pasa a Avatar ===
         botonSiguiente.setOnClickListener {

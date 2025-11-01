@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.cibertec.edu.interfacesproyecto.R
 import org.cibertec.edu.interfacesproyecto.controller.SessionManager
+import org.cibertec.edu.interfacesproyecto.view.login.LoginActivity
 
 class NombreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +19,15 @@ class NombreActivity : AppCompatActivity() {
         val txtNombrePerro = findViewById<EditText>(R.id.NomPerro)
         val btnSiguiente = findViewById<Button>(R.id.BSiguiente)
         val session = SessionManager(this)
+        val flechaBack = findViewById<ImageView>(R.id.Flecha)  // Aquí capturamos la flecha
+
+        flechaBack.setOnClickListener {
+            // Redirige a LoginActivity cuando se hace clic en la flecha
+            val intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
+            finish()  // Opcional, para asegurarte de que se cierre esta actividad
+        }
+
 
         btnSiguiente.setOnClickListener {
             val nombre = txtNombrePerro.text.toString()
@@ -28,6 +39,9 @@ class NombreActivity : AppCompatActivity() {
 
             session.guardarDatoTemporal("nombre_perro", nombre)
             startActivity(Intent(this, NacimientoActivity::class.java))
+
+
+
         }
     }
 }

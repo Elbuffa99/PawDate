@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +57,17 @@ class RelacionesActivity : AppCompatActivity() {
         val nombre = session.obtenerDatoTemporal("nombre_perro")
         val fechaStr = session.obtenerDatoTemporal("fecha_nacimiento")
         val genero = session.obtenerDatoTemporal("genero")
+
+        val flechaBack = findViewById<ImageView>(R.id.Flecha)  // Aquí capturamos la flecha
+
+        flechaBack.setOnClickListener {
+            // Redirige a LoginActivity cuando se hace clic en la flecha
+            val intent = Intent(this, GeneroActivity::class.java)
+            startActivity(intent)
+            finish()  // Opcional, para asegurarte de que se cierre esta actividad
+        }
+
+
 
         Log.d("RelacionesActivity", "📦 Datos recuperados → email=$email, tel=$telefono, nombre=$nombre, fecha=$fechaStr, genero=$genero, busca=$busca")
 

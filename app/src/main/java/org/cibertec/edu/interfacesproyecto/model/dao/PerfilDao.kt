@@ -23,7 +23,7 @@ class PerfilDAO(private val context: Context) {
     ): Boolean {
         var exito = false
         val db = dbHelper.writableDatabase
-
+        Log.d("PerfilDAO", "📁 Ruta de la BD: ${db.path}")
         try {
             val valores = ContentValues().apply {
                 put("email", email)

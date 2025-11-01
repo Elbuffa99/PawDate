@@ -3,6 +3,7 @@ package org.cibertec.edu.interfacesproyecto.view.registro
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -70,7 +71,18 @@ class HabitosActivity : AppCompatActivity() {
         chipSoc2.setOnClickListener { seleccionarOpcionSociabilidad(chipSoc2, "Prefiere pocas interacciones") }
         chipSoc3.setOnClickListener { seleccionarOpcionSociabilidad(chipSoc3, "Es tímido con extraños") }
 
-        // ============================
+        val flechaBack = findViewById<ImageView>(R.id.Flecha)  // Aquí capturamos la flecha
+
+        flechaBack.setOnClickListener {
+
+            val intent = Intent(this, RelacionesActivity::class.java)
+            startActivity(intent)
+            finish()
+
+        }
+
+
+            // ============================
         // 🔹 Botón siguiente
         // ============================
         val btnSiguiente = findViewById<Button>(R.id.BSiguiente)

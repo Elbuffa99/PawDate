@@ -17,7 +17,16 @@
         <FrameLayout
             android:id="@+id/flayContenedor"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nvMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:headerLayout="@layout/menu_header"
+                app:menu="@menu/menu" />
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/ivMenu"
@@ -30,13 +39,5 @@
             app:tint="@color/black"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nvMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
