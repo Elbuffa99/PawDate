@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -26,6 +27,15 @@ class AvatarsActivity : AppCompatActivity() {
     private lateinit var btnSiguiente: Button
     private val PICK_IMAGE = 100
     private var imagenBase64: String? = null
+
+    // Nuevo launcher moderno
+    private val seleccionarImagen = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        uri?.let {
+            val bitmap = obtenerBitmap(it)
+            imgPerfil.setImageBitmap(bitmap)
+            imagenBase64 = convertirABase64(bitmap)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +51,13 @@ class AvatarsActivity : AppCompatActivity() {
         imgPerfil = findViewById(R.id.ImgPerfil)
         btnSiguiente = findViewById(R.id.BSiguiente)
 
+//        imgPerfil.setOnClickListener {
+//            abrirGaleria()
+//        }
+
         imgPerfil.setOnClickListener {
-            abrirGaleria()
+            // Lanza el selector de imágenes moderno
+            seleccionarImagen.launch("image/*")
         }
 
         btnSiguiente.setOnClickListener {
@@ -64,10 +79,11 @@ class AvatarsActivity : AppCompatActivity() {
         }
     }
 
-    private fun abrirGaleria() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        startActivityForResult(intent, PICK_IMAGE)
-    }
+//    private fun abrirGaleria() {
+//        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//        startActivityForResult(intent, PICK_IMAGE)
+//    }
+
 
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -81,6 +97,16 @@ class AvatarsActivity : AppCompatActivity() {
             }
         }
     }
+
+//    private fun obtenerBitmap(uri: Uri): Bitmap {
+//       return if (Build.VERSION.SDK_INT < 28) {
+//            MediaStore.Images.Media.getBitmap(contentResolver, uri)
+//        } else {
+//            val source = ImageDecoder.createSource(contentResolver, uri)
+//            ImageDecoder.decodeBitmap(source)
+//        }
+//    }
+
 
     private fun obtenerBitmap(uri: Uri): Bitmap {
         return if (Build.VERSION.SDK_INT < 28) {
