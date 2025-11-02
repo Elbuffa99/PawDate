@@ -9,6 +9,7 @@
     import androidx.drawerlayout.widget.DrawerLayout
     import com.google.android.material.navigation.NavigationView
     import org.cibertec.edu.interfacesproyecto.R
+    import org.cibertec.edu.interfacesproyecto.view.login.InicioSActivity
     import org.cibertec.edu.interfacesproyecto.view.perfil.PerfilActivity
 
     class MenuActivity : AppCompatActivity() {
@@ -50,6 +51,11 @@
 
                     R.id.nav_logout -> {
                         // Cerrar sesión, según tu lógica
+                        val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
+                        val editor = prefs.edit()
+                        editor.clear()  // Limpia todo lo que haya guardado
+                        editor.apply()
+                        startActivity(Intent(this, InicioSActivity::class.java))
                         finish()
                     }
                 }

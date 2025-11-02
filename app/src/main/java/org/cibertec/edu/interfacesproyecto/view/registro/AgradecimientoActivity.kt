@@ -47,17 +47,34 @@ class AgradecimientoActivity : AppCompatActivity() {
         // 🟢 Espera automática de 3 segundos y redirige al menú
         Handler(Looper.getMainLooper()).postDelayed({
             irAlMenu()
-        }, 3000)
+        }, 5000)
 
         // 🟢 También permitir que el usuario pulse el botón manualmente
         btnIrMenu.setOnClickListener {
+            val session = SessionManager(this)
+            val idPerfil = session.obtenerIdPerfil()
+
+            val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
+            val editor = prefs.edit()
+            editor.putInt("id_perfil", idPerfil)
+            editor.putBoolean("isLoggedIn", true)
+            editor.apply()
             irAlMenu()
         }
     }
 
     private fun mostrarAvatar() {
+
+
         val session = SessionManager(this)
         val idPerfil = session.obtenerIdPerfil()
+
+        val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putInt("id_perfil", idPerfil)
+        editor.putBoolean("isLoggedIn", true)
+        editor.apply()
+
         Log.d("AgradecimientoActivity", "🔍 ID de perfil obtenido: $idPerfil")
 
         if (idPerfil == -1) {

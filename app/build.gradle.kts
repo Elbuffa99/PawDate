@@ -38,6 +38,8 @@ android {
     }
 }
 
+
+
 dependencies {
     // Room (Base de datos local)
     implementation("androidx.room:room-runtime:2.6.1")
