@@ -22,6 +22,11 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.clear()   // 🔴 Elimina todas las claves guardadas (id_perfil, buscandopulgas, etc.)
+        editor.apply()
+
         // 🟢 Botón "Registrarme"
         val btnRegistrarme = findViewById<Button>(R.id.BRegistrate)
         btnRegistrarme.setOnClickListener {
