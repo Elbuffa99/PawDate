@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:src="@drawable/ic_sandwich"
+            android:contentDescription="Volver"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:text="Editar Perfil"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Contenido desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_degradado"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <!-- Imagen de perfil -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivFotoPerfil"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/circle_green"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:contentDescription="Foto del perrito" />
+
+            <!-- Botón para cambiar foto -->
+            <Button
+                android:id="@+id/btnCambiarFoto"
+                android:text="Cambiar foto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Campos de texto -->
+            <EditText
+                android:id="@+id/etNombre"
+                android:hint="Nombre completo"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@color/beige1"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@color/beige1"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etTelefono"
+                android:hint="Teléfono"
+                android:inputType="phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@color/beige1"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etDescripcion"
+                android:hint="Descripción o biografía"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:gravity="top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@color/beige1"
+                android:padding="12dp" />
+
+            <!-- Botón para guardar -->
+            <Button
+                android:id="@+id/btnGuardarCambios"
+                android:text="Guardar cambios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:padding="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    tools:context=".view.login.InicioSActivity">
+<!-- Copypaste de lo que hicimos en clase -->
+    <!-- Logo momentaneo de la aplicación -->
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@drawable/pawdate_icon"
+        app:tint="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inicio de Sesión en PawDate"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/kanit_bold"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/Logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!--TextInputLayout es contenedor para lo visual-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusBottomEnd="25dp"
+        app:boxCornerRadiusBottomStart="25dp"
+        app:boxCornerRadiusTopEnd="25dp"
+        app:boxCornerRadiusTopStart="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/Titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- TextInputEditText para edición o inserción de texto -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            android:fontFamily="@font/kanit_medium"
+            android:layout_margin="24dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--TextInputLayout es contenedor para lo visual-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeWidth="2dp"
+        app:boxCornerRadiusBottomEnd="25dp"
+        app:boxCornerRadiusBottomStart="25dp"
+        app:boxCornerRadiusTopEnd="25dp"
+        app:boxCornerRadiusTopStart="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- TextInputEditText para edición o inserción de texto -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Contrasenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            android:fontFamily="@font/kanit_medium"
+            android:layout_margin="24dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/boton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#232323"
+        android:text="Ingresar"
+        android:textSize="20sp"
+        android:fontFamily="@font/kanit_bold"
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/boton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/nuevoapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Nuevo en la app?"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#ffffff"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tvRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrate aqui"
+            android:textAlignment="center"
+            android:fontFamily="@font/kanit_semibold"
+            android:textColor="#ffffff"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

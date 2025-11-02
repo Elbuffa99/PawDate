@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:background="@drawable/fondo_degradado"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:elevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:src="@drawable/ic_sandwich"
+            android:contentDescription="Volver"
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:text="Mis Match"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Contenido principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Imagen o animación central -->
+            <ImageView
+                android:id="@+id/ivMatchHeart"
+                android:src="@drawable/ic_heart"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Corazones de match" />
+
+            <TextView
+                android:text="¡Sus patitas se cruzaron! 🐾"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Fotos de los perritos -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivPerro1"
+                    android:src="@drawable/chip_bg_gray"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:contentDescription="Foto del perrito" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivPerro2"
+                    android:src="@drawable/fondo_degradado"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:contentDescription="Foto del perrito" />
+            </LinearLayout>
+
+            <!-- Nombres -->
+            <TextView
+                android:id="@+id/tvNombresMatch"
+                android:text="Princesa ❤️ Luis"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Campos para programar encuentro -->
+            <TextView
+                android:text="Planifiquemos su primer encuentro:"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/etUbicacion"
+                android:hint="Elige la ubicación del encuentro"
+                android:inputType="text"
+                android:background="@color/beige1"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/etFecha"
+                android:hint="Selecciona la fecha y hora"
+                android:inputType="datetime"
+                android:background="@color/beige1"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Botón para confirmar -->
+            <Button
+                android:id="@+id/btnConfirmarEncuentro"
+                android:text="Confirmar encuentro 🐕💕"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:elevation="4dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
