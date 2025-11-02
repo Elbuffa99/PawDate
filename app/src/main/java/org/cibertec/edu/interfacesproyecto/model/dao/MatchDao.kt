@@ -23,4 +23,40 @@ class MatchDAO(context: Context) {
         db.close()
         return result != -1L
     }
+
+    fun obtenerMatchesMutuos(idPerfil: Int): List<Int> {
+        val db = dbHelper.readableDatabase
+        val matchesMutuos = mutableListOf<Int>()
+
+        // 1️⃣ Buscar todos los id_perfil2 a los que el usuario dio "aceptado"
+        val cursor1 = db.rawQuery(
+            "SELECT id_perfil2 FROM MATCHES WHERE id_perfil1 = ? AND estado = 'aceptado'",
+            arrayOf(idPerfil.toString())
+        )
+
+        if (cursor1.moveToFirst()) {
+            do {
+                val idPerfil2 = cursor1.getInt(0)
+
+                // 2️⃣ Verificar si ese perfil también aceptó al usuario
+                val cursor2 = db.rawQuery(
+                    "SELECT 1 FROM MATCHES WHERE id_perfil1 = ? AND id_perfil2 = ? AND estado = 'aceptado' LIMIT 1",
+                    arrayOf(idPerfil2.toString(), idPerfil.toString())
+                )
+
+                if (cursor2.moveToFirst()) {
+                    // Si hay reciprocidad, es un match mutuo ❤️
+                    matchesMutuos.add(idPerfil2)
+                }
+
+                cursor2.close()
+            } while (cursor1.moveToNext())
+        }
+
+        cursor1.close()
+        db.close()
+
+        return matchesMutuos
+    }
+
 }

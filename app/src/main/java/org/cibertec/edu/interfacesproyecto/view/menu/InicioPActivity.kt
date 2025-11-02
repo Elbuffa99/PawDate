@@ -108,9 +108,13 @@ class InicioPActivity : AppCompatActivity() {
                 // Verificar si existe ese perfil
                 val existePerfil = loginDAO.existePerfilPorId(nuevoIdBuscandoPulgas)
 
+                if (existePerfil) {
+                    nuevoIdBuscandoPulgas = if (idPerfilSesion == nuevoIdBuscandoPulgas) nuevoIdBuscandoPulgas +1 else nuevoIdBuscandoPulgas
+                }
+
                 // Si no existe, reiniciar (como en el otro método)
                 if (!existePerfil) {
-                    nuevoIdBuscandoPulgas = if (idBuscandoPulgas == 1) 2 else 1
+                    nuevoIdBuscandoPulgas = if (idPerfilSesion == 1) 2 else 1
                 }
 
                 // Guardar el nuevo valor de 'buscandopulgas'
@@ -135,6 +139,7 @@ class InicioPActivity : AppCompatActivity() {
 
         btnReject.setOnClickListener {
             val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
+            val idPerfilSesion = prefs.getInt("id_perfil", -1)
             var idBuscandoPulgas = prefs.getInt("buscandopulgas", -1)
 
             if (idBuscandoPulgas != -1) {
@@ -144,8 +149,12 @@ class InicioPActivity : AppCompatActivity() {
                 var nuevoIdBuscandoPulgas = idBuscandoPulgas + 1
                 val existePerfil = loginDAO.existePerfilPorId(nuevoIdBuscandoPulgas)
 
+                if (existePerfil) {
+                    nuevoIdBuscandoPulgas = if (idPerfilSesion == nuevoIdBuscandoPulgas) nuevoIdBuscandoPulgas +1 else nuevoIdBuscandoPulgas
+                }
+
                 if (!existePerfil) {
-                    nuevoIdBuscandoPulgas = if (idBuscandoPulgas == 1) 2 else 1
+                    nuevoIdBuscandoPulgas = if (idPerfilSesion == 1) 2 else 1
                 }
 
                 // Guardar el nuevo perfil mostrado
