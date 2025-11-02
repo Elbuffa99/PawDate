@@ -40,6 +40,20 @@ class RegistroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            // ✅ Validación de email con dominio específico (gmail o hotmail)
+            val emailRegex = Regex("^[A-Za-z0-9._%+-]+@(gmail|hotmail)\\.com$", RegexOption.IGNORE_CASE)
+
+            if (!emailRegex.matches(email)) {
+                Toast.makeText(this, "Correo debe ser @gmail.com o @hotmail.com", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // ✅ Validación del número telefónico exacto de 9 dígitos
+            if (telefono.length != 9 || !telefono.all { it.isDigit() }) {
+                Toast.makeText(this, "El número debe tener 9 dígitos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
 
             session.guardarDatoTemporal("email", email)
             session.guardarDatoTemporal("telefono", telefono)

@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
+import org.cibertec.edu.interfacesproyecto.view.perfil.PerfilActivity
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -161,6 +162,12 @@ class EditPerfilActivity : AppCompatActivity() {
                     android.widget.Toast.LENGTH_SHORT
                 ).show()
                 perfilActual = perfilActualizado
+
+                // 🔽 Ir a PerfilActivity después de guardar
+                val intent = Intent(this, PerfilActivity::class.java)
+                startActivity(intent)
+                finish() // opcional, para que no pueda volver atrás
+
             } else {
                 android.widget.Toast.makeText(
                     this,
@@ -168,6 +175,7 @@ class EditPerfilActivity : AppCompatActivity() {
                     android.widget.Toast.LENGTH_SHORT
                 ).show()
             }
+
 
 
 

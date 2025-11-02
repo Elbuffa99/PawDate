@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import org.cibertec.edu.interfacesproyecto.R
 import org.cibertec.edu.interfacesproyecto.controller.SessionManager
 import org.cibertec.edu.interfacesproyecto.model.dao.PerfilDAO
-
 class RelacionesActivity : AppCompatActivity() {
 
     private lateinit var perfilDAO: PerfilDAO
@@ -30,8 +29,16 @@ class RelacionesActivity : AppCompatActivity() {
         val bCuatro = findViewById<Button>(R.id.BCuatro)
         val bCinco = findViewById<Button>(R.id.BCinco)
         val bSeis = findViewById<Button>(R.id.BSeis)
+        val flechaBack = findViewById<ImageView>(R.id.Flecha) // ✅ Mover aquí
 
-        // Función genérica
+        // 🔙 Flecha: volver a la pantalla anterior (GeneroActivity)
+        flechaBack.setOnClickListener {
+            val intent = Intent(this, GeneroActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // Función genérica para mostrar el diálogo
         fun guardarYSeguir(busca: String) {
             AlertDialog.Builder(this)
                 .setTitle("Confirmar elección")
@@ -41,7 +48,7 @@ class RelacionesActivity : AppCompatActivity() {
                 .show()
         }
 
-        // Asignar listeners
+        // Asignar listeners a los botones
         bUno.setOnClickListener { guardarYSeguir("Amistad peluda") }
         bDos.setOnClickListener { guardarYSeguir("Amor perruno") }
         bTres.setOnClickListener { guardarYSeguir("Compañero de juegos") }
@@ -57,17 +64,6 @@ class RelacionesActivity : AppCompatActivity() {
         val nombre = session.obtenerDatoTemporal("nombre_perro")
         val fechaStr = session.obtenerDatoTemporal("fecha_nacimiento")
         val genero = session.obtenerDatoTemporal("genero")
-
-        val flechaBack = findViewById<ImageView>(R.id.Flecha)  // Aquí capturamos la flecha
-
-        flechaBack.setOnClickListener {
-            // Redirige a LoginActivity cuando se hace clic en la flecha
-            val intent = Intent(this, GeneroActivity::class.java)
-            startActivity(intent)
-            finish()  // Opcional, para asegurarte de que se cierre esta actividad
-        }
-
-
 
         Log.d("RelacionesActivity", "📦 Datos recuperados → email=$email, tel=$telefono, nombre=$nombre, fecha=$fechaStr, genero=$genero, busca=$busca")
 
@@ -92,7 +88,6 @@ class RelacionesActivity : AppCompatActivity() {
             Log.d("RelacionesActivity", "✅ Perfil insertado correctamente (ID=$idPerfil), redirigiendo a HabitosActivity")
             Toast.makeText(this, "Perfil creado correctamente 🎉", Toast.LENGTH_SHORT).show()
 
-            // 🚀 Ir a HabitosActivity
             val intent = Intent(this, HabitosActivity::class.java)
             intent.putExtra("id_perfil", idPerfil)
             startActivity(intent)
@@ -104,3 +99,5 @@ class RelacionesActivity : AppCompatActivity() {
         }
     }
 }
+
+
