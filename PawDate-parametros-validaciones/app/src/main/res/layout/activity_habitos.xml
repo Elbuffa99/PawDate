@@ -1,0 +1,290 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.registro.RelacionesActivity">
+
+    <!-- Flecha de atras -->
+    <ImageView
+        android:id="@+id/Flecha"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/iconoflechaback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#F69824" />
+
+    <!--  Barra de progreso  -->
+    <ProgressBar
+        android:id="@+id/BProgreso"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:progress="75"
+        android:max="100"
+        android:layout_marginTop="10dp"
+        android:progressDrawable="@drawable/barra_progreso"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_constraintTop_toBottomOf="@+id/Flecha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/TvH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hablemos de los hábitos de tu perrito"
+        android:textColor="#232323"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:fontFamily="@font/kanit_bold"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/BProgreso"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/TvLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cuéntanos un poco más sobre su rutina diaria para encontrarle el match perfecto."
+        android:textColor="#232323"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        android:fontFamily="@font/kanit_semibold"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/TvH1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- NIVEL DE ENERGÍA -->
+    <TextView
+        android:id="@+id/TvLabel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nivel de energía:"
+        android:fontFamily="@font/kanit_semibold"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="14dp"
+        android:textSize="14sp"
+        android:textColor="#232323"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Opciones (simuladas con TextView + backgrounds) -->
+    <LinearLayout
+        android:id="@+id/LLyt1"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/Chip1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Muy activo (le encanta correr y jugar todo el día)"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/TvLabel2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/Chip2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Tranquilo (prefiere paseos cortos y siestas largas)"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/TvLabel2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/Chip3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Intermedio (juega, pero también disfruta descansar)"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/TvLabel2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </LinearLayout>
+
+    <!-- FRECUENCIA DE PASEOS -->
+    <TextView
+        android:id="@+id/TvLabel3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Frecuencia de paseos:"
+        android:fontFamily="@font/kanit_semibold"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="14dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/LLyt1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/LLyt2"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• 1 vez al día"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/TvLabel3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• 2 a 3 veces al día"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/TvLabel3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• ¡Más de 3 veces al día!"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/TvLabel3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </LinearLayout>
+
+    <!-- SOCIABILIDAD -->
+    <TextView
+        android:id="@+id/TvLabel4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sociabilidad:"
+        android:fontFamily="@font/kanit_semibold"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="14dp"
+        android:textSize="14sp"
+        android:textColor="#232323"
+        app:layout_constraintTop_toBottomOf="@+id/LLyt2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/LLyt3"
+        android:orientation="vertical"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabel4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Le encanta conocer otros perros"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/LLyt3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Prefiere pocas interacciones"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/LLyt3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Es tímido con extraños"
+            android:textSize="10sp"
+            android:fontFamily="@font/kanit_medium"
+            android:textColor="#232323"
+            android:padding="10dp"
+            android:background="@drawable/chip_bg_gray"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/LLyt3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </LinearLayout>
+
+    <!--  Boton siguiente  -->
+    <Button
+        android:id="@+id/BSiguiente"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        style="@style/ButtonGradient"
+        android:textColor="#ffffff"
+        android:text="SIGUIENTE"
+        android:textSize="20sp"
+        android:fontFamily="@font/kanit_bold"
+        app:layout_constraintTop_toBottomOf="@+id/LLyt3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.perfil.PerfilActivity">
+
+        <!-- Barra superior -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:src="@drawable/ic_sandwich"
+                android:contentDescription="Volver"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/tvTopTitle"
+                android:text="Perfil"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Contenido desplazable -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fondo_degradado"
+            android:padding="20dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!-- Imagen del perrito -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivFotoPerfil"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/amorperruno_icon"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:contentDescription="Foto del perrito" />
+
+                <!-- Nombre del perrito -->
+                <TextView
+                    android:id="@+id/tvNombrePerrito"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Princesa 🌸"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Raza y edad -->
+                <TextView
+                    android:id="@+id/tvRazaEdad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Golden Retriever • 3 años"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Línea divisoria -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CCCCCC"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Información adicional -->
+                <TextView
+                    android:id="@+id/tvTituloInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sobre mí"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Soy un perrito alegre, me encanta correr en el parque y conocer nuevos amigos. 🐕✨"
+                    android:textColor="#444444"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Hábitos -->
+                <TextView
+                    android:id="@+id/tvTituloHabitos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hábitos y gustos"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvHabitos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="- Paseos diarios 🦮\n- Duerme mucho 😴\n- Le encanta el pollo 🍗\n- Juguetón y sociable 🐾"
+                    android:textColor="#444444"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Botones de acción -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnEditarPerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Editar Perfil"
+                        android:backgroundTint="@color/teal_700"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="12dp" />
+
+                    <Button
+                        android:id="@+id/btnCerrarSesion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cerrar Sesión"
+                        android:backgroundTint="@color/red"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <!-- Espacio inferior -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>

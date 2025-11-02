@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    tools:context=".view.login.LoginActivity">
+
+<!-- Logo de la aplicación -->
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:src="@drawable/pawdate_icon"
+        app:tint="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <!--  Titulo de la aplicación PawDate  -->
+    <TextView
+        android:id="@+id/TPawDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PawDate"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:textSize="90sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/kanit_bold"
+        app:layout_constraintTop_toBottomOf="@+id/Logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+<!-- Texto de la aplicación en un linearlayout -->
+    <LinearLayout
+        android:id="@+id/LLyt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/TPawDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/TvNuevo"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Porque el amor también tiene cuatro patas"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:fontFamily="@font/kanit_medium"/>
+    </LinearLayout>
+
+<!--  Boton iniciar sesión  -->
+    <Button
+        android:id="@+id/BIniciar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#404040"
+        android:fontFamily="@font/kanit_medium"
+        android:text="Iniciar Sesión con correo electronico"
+        app:layout_constraintTop_toBottomOf="@+id/LLyt1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+<!-- Boton Registro -->
+    <Button
+        android:id="@+id/BRegistrate"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#404040"
+        android:fontFamily="@font/kanit_medium"
+        android:text="Registrarme"
+        app:layout_constraintTop_toBottomOf="@+id/BIniciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
