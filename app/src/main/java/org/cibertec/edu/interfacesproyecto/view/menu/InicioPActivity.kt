@@ -14,6 +14,8 @@ import org.cibertec.edu.interfacesproyecto.model.dao.LoginDAO
 import android.util.Base64
 import android.widget.ImageButton
 import android.widget.Toast
+import org.cibertec.edu.interfacesproyecto.model.dao.MatchDAO
+import org.cibertec.edu.interfacesproyecto.model.entidades.Match
 
 class InicioPActivity : AppCompatActivity() {
 
@@ -47,18 +49,22 @@ class InicioPActivity : AppCompatActivity() {
         val idPerfil = prefs.getInt("id_perfil", -1)
 
         if (idPerfil != -1) {
-            var perfilIdFinal = idPerfil
+            var perfilIdFinal = 1
 
             // 🔴 Si el idPerfil es 1, lo incrementamos y lo guardamos como "buscandopulgas"
             if (idPerfil == 1) {
                 perfilIdFinal = idPerfil + 1
+            }
+            val existePerfil = loginDAO.existePerfilPorId(perfilIdFinal)
 
-                val editor = prefs.edit()
-                editor.putInt("id_perfil", perfilIdFinal)
-                editor.putString("sesion_nombre", "buscandopulgas") // 🔴 Marca especial de sesión
-                editor.apply()
+            // Si no existe, decidir reinicio según el id_login
+            if (!existePerfil) {
+                perfilIdFinal = if (idPerfil == 1) 2 else 1
             }
 
+            val editor = prefs.edit()
+            editor.putInt("buscandopulgas", perfilIdFinal)
+            editor.apply()
             // Obtener avatar en Base64 desde la BD
             val avatarBase64 = loginDAO.obtenerAvatarBase64PorId(perfilIdFinal)
 
@@ -81,84 +87,81 @@ class InicioPActivity : AppCompatActivity() {
 
         btnAccept.setOnClickListener {
             val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
-            val sesionNombre = prefs.getString("sesion_nombre", null)
-            var idPerfil = prefs.getInt("id_perfil", -1)
-            val idLogin = prefs.getInt("id_login", -1)
+            val idPerfilSesion = prefs.getInt("id_perfil", -1)        // 🟢 El perro logueado
+            var idBuscandoPulgas = prefs.getInt("buscandopulgas", -1) // 🟢 El perro mostrado actualmente
 
-            if (sesionNombre == "buscandopulgas" && idPerfil != -1) {
-                // Calcular el siguiente perfil
-                var nuevoIdPerfil = idPerfil + 1
+            if (idPerfilSesion != -1 && idBuscandoPulgas != -1) {
+                val matchDAO = MatchDAO(this)
+
+                // 🐾 Registrar el match
+                val match = Match(
+                    id_perfil1 = idPerfilSesion,      // El que da like (logueado)
+                    id_perfil2 = idBuscandoPulgas,    // El mostrado
+                    estado = "aceptado"
+                )
+                matchDAO.registrarMatch(match)
+                Toast.makeText(this, "¡Te encanta! 🐾💚", Toast.LENGTH_SHORT).show()
+
+                // 👉 Pasar al siguiente perfil
+                var nuevoIdBuscandoPulgas = idBuscandoPulgas + 1
 
                 // Verificar si existe ese perfil
-                val existePerfil = loginDAO.existePerfilPorId(nuevoIdPerfil)
+                val existePerfil = loginDAO.existePerfilPorId(nuevoIdBuscandoPulgas)
 
-                // Si no existe, decidir reinicio según el id_login
+                // Si no existe, reiniciar (como en el otro método)
                 if (!existePerfil) {
-                    nuevoIdPerfil = if (idLogin == 1) 2 else 1
+                    nuevoIdBuscandoPulgas = if (idBuscandoPulgas == 1) 2 else 1
                 }
 
-                // Guardar el nuevo ID en SharedPreferences
+                // Guardar el nuevo valor de 'buscandopulgas'
                 val editor = prefs.edit()
-                editor.putInt("id_perfil", nuevoIdPerfil)
+                editor.putInt("buscandopulgas", nuevoIdBuscandoPulgas)
                 editor.apply()
 
-                // Obtener y mostrar el avatar del nuevo perfil si existe
-                val avatarBase64 = loginDAO.obtenerAvatarBase64PorId(nuevoIdPerfil)
+                // 🖼️ Obtener y mostrar el nuevo avatar
+                val avatarBase64 = loginDAO.obtenerAvatarBase64PorId(nuevoIdBuscandoPulgas)
                 if (!avatarBase64.isNullOrEmpty()) {
                     val bitmap = convertBase64ToBitmap(avatarBase64)
-                    if (bitmap != null) {
-                        imgAvatar.setImageBitmap(bitmap)
-                        Toast.makeText(this, "¡Te encanta! 🐾💚", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this, "Error al convertir imagen 😿", Toast.LENGTH_SHORT).show()
-                    }
+                    imgAvatar.setImageBitmap(bitmap)
                 } else {
                     Toast.makeText(this, "No hay imagen para este perfil 😺", Toast.LENGTH_SHORT).show()
                 }
 
             } else {
-                Toast.makeText(this, "Inicia sesión como buscandopulgas", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Sesión inválida. Inicia sesión nuevamente.", Toast.LENGTH_SHORT).show()
             }
         }
 
+
         btnReject.setOnClickListener {
             val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
-            val sesionNombre = prefs.getString("sesion_nombre", null)
-            var idPerfil = prefs.getInt("id_perfil", -1)
-            val idLogin = prefs.getInt("id_login", -1)
+            var idBuscandoPulgas = prefs.getInt("buscandopulgas", -1)
 
-            if (sesionNombre == "buscandopulgas" && idPerfil != -1) {
-                // Calcular el siguiente perfil
-                var nuevoIdPerfil = idPerfil + 1
+            if (idBuscandoPulgas != -1) {
+                Toast.makeText(this, "💔 No fue para ti... ¡Sigue buscando!", Toast.LENGTH_SHORT).show()
 
-                // Verificar si el perfil existe
-                val existePerfil = loginDAO.existePerfilPorId(nuevoIdPerfil)
+                // 👉 Pasar al siguiente perfil (igual que aceptar)
+                var nuevoIdBuscandoPulgas = idBuscandoPulgas + 1
+                val existePerfil = loginDAO.existePerfilPorId(nuevoIdBuscandoPulgas)
 
-                // Si no existe, reiniciar según el login
                 if (!existePerfil) {
-                    nuevoIdPerfil = if (idLogin == 1) 2 else 1
+                    nuevoIdBuscandoPulgas = if (idBuscandoPulgas == 1) 2 else 1
                 }
 
-                // Guardar el nuevo perfil
-                val editor = prefs.edit()
-                editor.putInt("id_perfil", nuevoIdPerfil)
-                editor.apply()
+                // Guardar el nuevo perfil mostrado
+                prefs.edit().putInt("buscandopulgas", nuevoIdBuscandoPulgas).apply()
 
-                // Cargar el nuevo avatar
-                val avatarBase64 = loginDAO.obtenerAvatarBase64PorId(nuevoIdPerfil)
+                // 🖼️ Mostrar la nueva imagen
+                val avatarBase64 = loginDAO.obtenerAvatarBase64PorId(nuevoIdBuscandoPulgas)
                 if (!avatarBase64.isNullOrEmpty()) {
                     val bitmap = convertBase64ToBitmap(avatarBase64)
-                    if (bitmap != null) {
-                        imgAvatar.setImageBitmap(bitmap)
-                        Toast.makeText(this, "💔 No fue para ti... ¡Sigue buscando!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this, "⚠️ Error al mostrar la imagen.", Toast.LENGTH_SHORT).show()
-                    }
+                    imgAvatar.setImageBitmap(bitmap)
                 } else {
-                    Toast.makeText(this, "😿 Este perfil no tiene imagen.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "No hay imagen para este perfil 😺", Toast.LENGTH_SHORT).show()
                 }
+
             } else {
-                Toast.makeText(this, "🔒 Inicia sesión como *buscandopulgas* para usar esta función.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Sesión inválida. Inicia sesión nuevamente.", Toast.LENGTH_SHORT).show()
             }
         }
 
