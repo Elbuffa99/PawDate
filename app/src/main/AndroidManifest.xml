@@ -27,14 +27,10 @@
         <activity
             android:name=".view.registro.HabitosActivity"
             android:exported="false" />
+
+
         <activity
             android:name=".view.menu.MatchEncuentroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.perfil.EditPerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.perfil.PerfilActivity"
             android:exported="false" />
         <activity
             android:name=".view.menu.MenuActivity"
@@ -43,8 +39,23 @@
             android:name=".view.menu.InicioPActivity"
             android:exported="false" />
         <activity
+            android:name=".view.menu.PoliticasActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".view.perfil.EditPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.perfil.PerfilActivity"
+            android:exported="false" />
+
+
+        <activity
             android:name=".view.login.InicioSActivity"
             android:exported="false" />
+
+
         <activity
             android:name=".view.registro.RelacionesActivity"
             android:exported="false" />

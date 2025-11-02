@@ -44,10 +44,28 @@ class InicioSActivity : AppCompatActivity() {
 
             // ✅ Verificar en la base de datos real
             val existe = loginDAO.verificarPerfil(email, nombrePerro)
+            val idPerfil = loginDAO.obtenerIdPerfil(email)
             if (existe) {
-                Toast.makeText(this, "Bienvenido a PawDate, $nombrePerro 🐶", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MenuActivity::class.java))
-                finish()
+
+                val prefs = getSharedPreferences("user_session", MODE_PRIVATE)
+                val editor = prefs.edit()
+                editor.putInt("id_perfil", idPerfil)
+                editor.putBoolean("isLoggedIn", true)
+                editor.apply()
+
+                val prefs2 = getSharedPreferences("user_session", MODE_PRIVATE)
+                val idPerfil2 = prefs2.getInt("id_perfil", -1)
+                val perfil = loginDAO.obtenerPerfilPorId(idPerfil2)
+
+                if (perfil != null) {
+                    Toast.makeText(
+                        this,
+                        "Bienvenido a PawDate, 🐶 ${perfil.nombre_perro}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    startActivity(Intent(this, MenuActivity::class.java))
+                    finish()
+                }
             } else {
                 Toast.makeText(this, "Perfil no encontrado 🐕", Toast.LENGTH_SHORT).show()
             }
